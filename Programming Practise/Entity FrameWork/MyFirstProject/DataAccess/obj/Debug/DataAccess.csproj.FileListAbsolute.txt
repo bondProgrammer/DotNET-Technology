@@ -1,0 +1,15 @@
+E:\pawan\practise\entity framework\MyFirstProject\DataAccess\bin\Debug\DataAccess.dll
+E:\pawan\practise\entity framework\MyFirstProject\DataAccess\bin\Debug\DataAccess.pdb
+E:\pawan\practise\entity framework\MyFirstProject\DataAccess\bin\Debug\EntityFramework.dll
+E:\pawan\practise\entity framework\MyFirstProject\DataAccess\bin\Debug\Model.dll
+E:\pawan\practise\entity framework\MyFirstProject\DataAccess\bin\Debug\Model.pdb
+E:\pawan\practise\entity framework\MyFirstProject\DataAccess\obj\Debug\DataAccess.csprojResolveAssemblyReference.cache
+E:\pawan\practise\entity framework\MyFirstProject\DataAccess\obj\Debug\DataAccess.dll
+E:\pawan\practise\entity framework\MyFirstProject\DataAccess\obj\Debug\DataAccess.pdb
+D:\pawan\practise\entity framework\MyFirstProject\DataAccess\bin\Debug\DataAccess.dll
+D:\pawan\practise\entity framework\MyFirstProject\DataAccess\bin\Debug\DataAccess.pdb
+D:\pawan\practise\entity framework\MyFirstProject\DataAccess\bin\Debug\Model.dll
+D:\pawan\practise\entity framework\MyFirstProject\DataAccess\bin\Debug\Model.pdb
+D:\pawan\practise\entity framework\MyFirstProject\DataAccess\obj\Debug\DataAccess.csprojResolveAssemblyReference.cache
+D:\pawan\practise\entity framework\MyFirstProject\DataAccess\obj\Debug\DataAccess.dll
+D:\pawan\practise\entity framework\MyFirstProject\DataAccess\obj\Debug\DataAccess.pdb

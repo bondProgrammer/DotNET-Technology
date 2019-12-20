@@ -1,0 +1,6 @@
+D:\pawan\practise\c#\simple helloworld\simple helloworld\bin\Debug\simple helloworld.exe.config
+D:\pawan\practise\c#\simple helloworld\simple helloworld\bin\Debug\simple helloworld.exe
+D:\pawan\practise\c#\simple helloworld\simple helloworld\bin\Debug\simple helloworld.pdb
+D:\pawan\practise\c#\simple helloworld\simple helloworld\obj\Debug\simple helloworld.exe
+D:\pawan\practise\c#\simple helloworld\simple helloworld\obj\Debug\simple helloworld.pdb
+D:\pawan\practise\c#\simple helloworld\simple helloworld\obj\Debug\simplehelloworld.csprojResolveAssemblyReference.cache

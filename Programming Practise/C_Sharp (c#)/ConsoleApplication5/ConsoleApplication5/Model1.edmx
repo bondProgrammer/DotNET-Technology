@@ -1,0 +1,179 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="RAYModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="RAYModelStoreContainer">
+          <EntitySet Name="Destinations" EntityType="RAYModel.Store.Destinations" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Lodgings" EntityType="RAYModel.Store.Lodgings" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Trips" EntityType="RAYModel.Store.Trips" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK_Lodgings_Destinations_Destination_DestinationId" Association="RAYModel.Store.FK_Lodgings_Destinations_Destination_DestinationId">
+            <End Role="Destinations" EntitySet="Destinations" />
+            <End Role="Lodgings" EntitySet="Lodgings" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Destinations">
+          <Key>
+            <PropertyRef Name="DestinationId" />
+          </Key>
+          <Property Name="DestinationId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Country" Type="nvarchar(max)" />
+          <Property Name="Description" Type="nvarchar(max)" />
+          <Property Name="photo" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="Lodgings">
+          <Key>
+            <PropertyRef Name="LodgingId" />
+          </Key>
+          <Property Name="LodgingId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="nvarchar(max)" />
+          <Property Name="Owner" Type="nvarchar(max)" />
+          <Property Name="IsResort" Type="bit" Nullable="false" />
+          <Property Name="Destination_DestinationId" Type="int" />
+        </EntityType>
+        <EntityType Name="Trips">
+          <Key>
+            <PropertyRef Name="Identifier" />
+          </Key>
+          <Property Name="Identifier" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="StartDate" Type="datetime" Nullable="false" />
+          <Property Name="EndDate" Type="datetime" Nullable="false" />
+          <Property Name="Cost" Type="decimal" Nullable="false" Scale="2" />
+        </EntityType>
+        <Association Name="FK_Lodgings_Destinations_Destination_DestinationId">
+          <End Role="Destinations" Type="RAYModel.Store.Destinations" Multiplicity="0..1" />
+          <End Role="Lodgings" Type="RAYModel.Store.Lodgings" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Destinations">
+              <PropertyRef Name="DestinationId" />
+            </Principal>
+            <Dependent Role="Lodgings">
+              <PropertyRef Name="Destination_DestinationId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="RAYModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="RAYEntities" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="Destinations" EntityType="RAYModel.Destination" />
+          <EntitySet Name="Lodgings" EntityType="RAYModel.Lodging" />
+          <EntitySet Name="Trips" EntityType="RAYModel.Trip" />
+          <AssociationSet Name="FK_Lodgings_Destinations_Destination_DestinationId" Association="RAYModel.FK_Lodgings_Destinations_Destination_DestinationId">
+            <End Role="Destinations" EntitySet="Destinations" />
+            <End Role="Lodgings" EntitySet="Lodgings" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Destination">
+          <Key>
+            <PropertyRef Name="DestinationId" />
+          </Key>
+          <Property Name="DestinationId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Country" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Description" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="photo" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <NavigationProperty Name="Lodgings" Relationship="RAYModel.FK_Lodgings_Destinations_Destination_DestinationId" FromRole="Destinations" ToRole="Lodgings" />
+        </EntityType>
+        <EntityType Name="Lodging">
+          <Key>
+            <PropertyRef Name="LodgingId" />
+          </Key>
+          <Property Name="LodgingId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Owner" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="IsResort" Type="Boolean" Nullable="false" />
+          <Property Name="DestinationRefId" Type="Int32" />
+          <NavigationProperty Name="Destination" Relationship="RAYModel.FK_Lodgings_Destinations_Destination_DestinationId" FromRole="Lodgings" ToRole="Destinations" />
+        </EntityType>
+        <EntityType Name="Trip">
+          <Key>
+            <PropertyRef Name="Identifier" />
+          </Key>
+          <Property Name="Identifier" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="StartDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="EndDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ComplexProperty" Type="RAYModel.COMP" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_Lodgings_Destinations_Destination_DestinationId">
+          <End Role="Destinations" Type="RAYModel.Destination" Multiplicity="0..1" />
+          <End Role="Lodgings" Type="RAYModel.Lodging" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Destinations">
+              <PropertyRef Name="DestinationId" />
+            </Principal>
+            <Dependent Role="Lodgings">
+              <PropertyRef Name="DestinationRefId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <ComplexType Name="COMP">
+          <Property Type="Decimal" Name="Cost" Nullable="false" Precision="18" Scale="2" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="RAYModelStoreContainer" CdmEntityContainer="RAYEntities">
+          <EntitySetMapping Name="Destinations">
+            <EntityTypeMapping TypeName="RAYModel.Destination">
+              <MappingFragment StoreEntitySet="Destinations">
+                <ScalarProperty Name="DestinationId" ColumnName="DestinationId" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Country" ColumnName="Country" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="photo" ColumnName="photo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Lodgings">
+            <EntityTypeMapping TypeName="RAYModel.Lodging">
+              <MappingFragment StoreEntitySet="Lodgings">
+                <ScalarProperty Name="LodgingId" ColumnName="LodgingId" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Owner" ColumnName="Owner" />
+                <ScalarProperty Name="IsResort" ColumnName="IsResort" />
+                <ScalarProperty Name="DestinationRefId" ColumnName="Destination_DestinationId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Trips">
+            <EntityTypeMapping TypeName="RAYModel.Trip">
+              <MappingFragment StoreEntitySet="Trips">
+                <ScalarProperty Name="Identifier" ColumnName="Identifier" />
+                <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+                <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+                <ComplexProperty Name="ComplexProperty">
+                  <ScalarProperty Name="Cost" ColumnName="Cost" />
+                </ComplexProperty>
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

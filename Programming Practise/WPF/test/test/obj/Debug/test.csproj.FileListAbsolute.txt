@@ -1,0 +1,6 @@
+D:\pawan\practise\wpf\test\test\bin\Debug\test.exe.config
+D:\pawan\practise\wpf\test\test\bin\Debug\test.exe
+D:\pawan\practise\wpf\test\test\bin\Debug\test.pdb
+D:\pawan\practise\wpf\test\test\obj\Debug\test.csprojResolveAssemblyReference.cache
+D:\pawan\practise\wpf\test\test\obj\Debug\test.exe
+D:\pawan\practise\wpf\test\test\obj\Debug\test.pdb

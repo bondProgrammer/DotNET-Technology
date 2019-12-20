@@ -1,0 +1,5 @@
+D:\pawan\practise\c#\File Operation\read and write Arraylines\read and write Arraylines\bin\Debug\read and write Arraylines.exe.config
+D:\pawan\practise\c#\File Operation\read and write Arraylines\read and write Arraylines\bin\Debug\read and write Arraylines.exe
+D:\pawan\practise\c#\File Operation\read and write Arraylines\read and write Arraylines\bin\Debug\read and write Arraylines.pdb
+D:\pawan\practise\c#\File Operation\read and write Arraylines\read and write Arraylines\obj\Debug\read and write Arraylines.exe
+D:\pawan\practise\c#\File Operation\read and write Arraylines\read and write Arraylines\obj\Debug\read and write Arraylines.pdb

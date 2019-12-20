@@ -1,0 +1,6 @@
+D:\pawan\practise\c#\staticblk\staticblk\bin\Debug\staticblk.exe.config
+D:\pawan\practise\c#\staticblk\staticblk\bin\Debug\staticblk.exe
+D:\pawan\practise\c#\staticblk\staticblk\bin\Debug\staticblk.pdb
+D:\pawan\practise\c#\staticblk\staticblk\obj\Debug\staticblk.exe
+D:\pawan\practise\c#\staticblk\staticblk\obj\Debug\staticblk.pdb
+D:\pawan\practise\c#\staticblk\staticblk\obj\Debug\staticblk.csprojResolveAssemblyReference.cache

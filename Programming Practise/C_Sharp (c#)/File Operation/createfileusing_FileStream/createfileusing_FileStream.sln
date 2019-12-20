@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "createfileusing_FileStream", "createfileusing_FileStream\createfileusing_FileStream.csproj", "{FAEEA557-A70D-4629-B86C-E5F0E60C8088}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FAEEA557-A70D-4629-B86C-E5F0E60C8088}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FAEEA557-A70D-4629-B86C-E5F0E60C8088}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FAEEA557-A70D-4629-B86C-E5F0E60C8088}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FAEEA557-A70D-4629-B86C-E5F0E60C8088}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

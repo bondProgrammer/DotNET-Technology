@@ -1,0 +1,10 @@
+E:\pawan\practise\entity framework\MyFirstProject\Model\bin\Debug\Model.dll
+E:\pawan\practise\entity framework\MyFirstProject\Model\bin\Debug\Model.pdb
+E:\pawan\practise\entity framework\MyFirstProject\Model\bin\Debug\EntityFramework.dll
+E:\pawan\practise\entity framework\MyFirstProject\Model\obj\Debug\Model.dll
+E:\pawan\practise\entity framework\MyFirstProject\Model\obj\Debug\Model.pdb
+D:\pawan\practise\entity framework\MyFirstProject\Model\bin\Debug\Model.dll
+D:\pawan\practise\entity framework\MyFirstProject\Model\bin\Debug\Model.pdb
+D:\pawan\practise\entity framework\MyFirstProject\Model\obj\Debug\Model.dll
+D:\pawan\practise\entity framework\MyFirstProject\Model\obj\Debug\Model.pdb
+D:\pawan\practise\entity framework\MyFirstProject\Model\obj\Debug\Model.csprojResolveAssemblyReference.cache

@@ -1,0 +1,6 @@
+D:\pawan\practise\c#\CB\CB\bin\Debug\CB.exe.config
+D:\pawan\practise\c#\CB\CB\obj\Debug\CB.csprojResolveAssemblyReference.cache
+D:\pawan\practise\c#\CB\CB\bin\Debug\CB.exe
+D:\pawan\practise\c#\CB\CB\bin\Debug\CB.pdb
+D:\pawan\practise\c#\CB\CB\obj\Debug\CB.exe
+D:\pawan\practise\c#\CB\CB\obj\Debug\CB.pdb

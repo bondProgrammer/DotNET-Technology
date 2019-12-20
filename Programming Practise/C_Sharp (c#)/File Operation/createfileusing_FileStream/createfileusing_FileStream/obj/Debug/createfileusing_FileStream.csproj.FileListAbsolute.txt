@@ -1,0 +1,6 @@
+D:\pawan\practise\c#\File Operation\createfileusing_FileStream\createfileusing_FileStream\bin\Debug\createfileusing_FileStream.exe.config
+D:\pawan\practise\c#\File Operation\createfileusing_FileStream\createfileusing_FileStream\bin\Debug\createfileusing_FileStream.exe
+D:\pawan\practise\c#\File Operation\createfileusing_FileStream\createfileusing_FileStream\bin\Debug\createfileusing_FileStream.pdb
+D:\pawan\practise\c#\File Operation\createfileusing_FileStream\createfileusing_FileStream\obj\Debug\createfileusing_FileStream.csprojResolveAssemblyReference.cache
+D:\pawan\practise\c#\File Operation\createfileusing_FileStream\createfileusing_FileStream\obj\Debug\createfileusing_FileStream.exe
+D:\pawan\practise\c#\File Operation\createfileusing_FileStream\createfileusing_FileStream\obj\Debug\createfileusing_FileStream.pdb

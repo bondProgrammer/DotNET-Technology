@@ -1,0 +1,5 @@
+D:\pawan\practise\c#\File Operation\stringopContains\stringopContains\bin\Debug\stringopContains.exe.config
+D:\pawan\practise\c#\File Operation\stringopContains\stringopContains\bin\Debug\stringopContains.exe
+D:\pawan\practise\c#\File Operation\stringopContains\stringopContains\bin\Debug\stringopContains.pdb
+D:\pawan\practise\c#\File Operation\stringopContains\stringopContains\obj\Debug\stringopContains.exe
+D:\pawan\practise\c#\File Operation\stringopContains\stringopContains\obj\Debug\stringopContains.pdb

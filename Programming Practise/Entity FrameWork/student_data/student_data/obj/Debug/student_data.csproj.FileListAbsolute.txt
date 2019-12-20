@@ -1,0 +1,10 @@
+D:\C#programs\student_data\student_data\bin\Debug\student_data.exe.config
+D:\C#programs\student_data\student_data\bin\Debug\student_data.exe
+D:\C#programs\student_data\student_data\bin\Debug\student_data.pdb
+D:\C#programs\student_data\student_data\bin\Debug\EntityFramework.dll
+D:\C#programs\student_data\student_data\obj\Debug\student_data.exe
+D:\C#programs\student_data\student_data\obj\Debug\student_data.pdb
+D:\C#programs\student_data\student_data\obj\Debug\student_data.csprojResolveAssemblyReference.cache
+E:\student_data\student_data\bin\Debug\student_data.exe.config
+E:\student_data\student_data\obj\Debug\student_data.exe
+E:\student_data\student_data\obj\Debug\student_data.pdb
