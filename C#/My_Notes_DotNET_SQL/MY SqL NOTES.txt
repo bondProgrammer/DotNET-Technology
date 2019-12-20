@@ -1,0 +1,1318 @@
+Name : Khatri Pavan D.
+Company Name : Textronics.pvt.ltd
+Language : SQL (Structured Query Language)
+----------------------------------------------------------------------------------------------------------------------------------------
+
+/// chapter 1 :															
+																
+																SQL (Structured Query Language ):
+																
+																
+- SQL is used to perform operation on the database such as updating record , deleteing record, Updating , creating and modifying tables .
+- DataBase : Organized collection of data.
+- RDBMS : Relational Database Management System.
+
+
+Usage of SQL :
+to create Database .
+to maintain database 
+to anlyze the data through SQL server Analysis(SSAS)
+to generate the data through SQL serevr reporting Servics (SSRS)
+To  carry out ETL operation through server integration services(SSIS)
+
+SQL Server Component  
+SQL server works on client - Sever Architecture.
+1. Workstation Component = Installed on every device .These are just interface to interact with server Component .
+2. Server Component = installed on centralised server which provide following services SQL service ,SQL browser , SQL server Agent  , SSIS,SSAS,SSRS .
+
+Instance of SQL server :
+Instance is an installation of SQL Server instacne is Exact copy of SQL server .
+
+Advantages Of Instacne
+Install diff version on a machine 
+reduced cost 
+to seprate security Provilages 
+to maintain standby services 
+
+
+=======================================================================================================================
+Version  : 
+Enterprise 
+standard
+Workgroup
+Developer 
+Express 
+Compact 
+datacenter
+Business Intelligence
+
+													ARCHITECTUREs :
+														
+											1. General Architechture
+											2. Memory Architecture 
+											3. DataFile Architecture
+											4. Log File Architecture					
+														
+File extensions used in SQL 
+ldf,mdf,sql,bak,trn
+
+SQL  SERVICES :
+	reporting Services
+	Integreation services
+	Analysis Services
+	Execution Plan 
+	
+Permissions in SQL:
+
+										PROTOCOLS USED BY SQL
+											
+								Protocols used by SQL are : 
+								
+								1. Shared Memory : for local connection and troubleshooting
+								2. Named Pipes : for connection which are in LAN 
+								3. TCP/IP : for connection which are in WAN 
+								4. VIA : virtual interface Adapter .
+	
+-=======================================================================================================================
+	Yet To Be Completed
+
+	
+
+//// chapter 2:
+															Data Integrity :
+
+1. Entity Integrity : here should be no duplicate in row
+2. Domain Integrity :Valid data should be there in column .
+3. Refrential Integrity : It specifies that rows cannot be deleted which is used By other Record.
+
+SQL is not case sensitive .
+
+
+ ////     CHAPTER 3:
+
+																DATATYPES:
+
+
+
+
+A] decimal(p,s) & Numeric(p,s) =
+Numeric data types that have fixed precision and scale. Decimal and numeric are synonyms and can be used interchangeably.
+# p (precision)
+The maximum total number of decimal digits that will be stored, both to the left and to the right of the decimal point.
+i.e total no of digits allowd to stored E.g : 10.2130    p=6  s= 4
+# s (scale)
+The number of decimal digits that will be stored to the right of the decimal point. This number is subtracted from p to 
+determine the maximum number of digits to the left of the decimal point. 
+i.e total no of gigit should be there after decial point 
+
+p=6 s=4
+eg 10.1200
+eg 1.0000  
+eg 121.1200  //error
+
+B] int, bigint, smallint, and tinyint =
+
+bigint 8 byte,
+smallint 2 byte,
+int 4 byte,
+tinyint 1 byte.
+
+C]bit = 1 or 0 (true or flase)
+
+
+D] smallmoney (4 bytes) and  money(8 bytes) float ,real.
+
+E]. Date and Time - 
+
+DATA : (CAST('2007-05-08 12:35:29. 1234567 +12:15' AS ----- ))
+	time :  12:35:29. 1234567
+	date : 2007-05-08
+	datetimeoffset : 	2007-05-08 12:35:29.1234567 +12:15
+	datetime2 : 2007-05-08 12:35:29. 1234567
+	smalldatetime : 2007-05-08 12:35:00
+	datetime : 2007-05-08 12:35:29.123
+	
+F]. char varchar  nvarchar nchar
+
+# VARCHAR is variable length, while CHAR is fixed length.
+# CHAR is a fixed length string data type, so any remaining space in the field is padded with blanks.
+# CHAR takes up 1 byte per character. So, a CHAR(100) field (or variable) takes up 100 bytes on disk, regardless of the string it holds.
+# VARCHAR is a variable length string data type, so it holds only the characters you assign to it. 
+# VARCHAR takes up 1 byte per character, + 2 bytes to hold length information.  For example, if you set a VARCHAR(100) data type = ‘Jen’, 
+then it would take up 3 bytes (for J, E, and N) plus 2 bytes, or 5 bytes in all.
+
+
+G] text  ntext image (these datatypes are going to be removed from further SQL systems )
+
+  nvarchar(max), varchar(max), and varbinary(max)  used these datatypes
+ 
+
+H] binary	varbinary image
+
+# Binary data types of either fixed length or variable length.
+# image variables store up to 2 GB of data and are commonly used to store any type of data file (not just images).
+# Use varbinary columns when the column size is expected to exceed 8K or may be subject to significant variability in size per record.
+# varbinary(max) variables store variable-length binary data of approximately n bytes. They may store a maximum of 2 GB and actually 
+store the length of the data plus an additional two bytes.
+
+7. Other data types - cursor	rowversion hierarchyid	uniqueidentifier sql_variant xml Spatial_Geometry_types	Spatial_Geography_Types table
+
+
+# Diffrence   :   Unicode vs non unicode:
+Unicode : 
+A Unicode character takes more bytes to store the data in the database. As we all know, many global industries wants to increase 
+their business worldwide and grow at the same time, they would want to widen their business by providing services to the customers 
+worldwide by supporting different languages like Chinese, Japanese, Korean and Arabic. Many websites these days are supporting international
+ languages to do their business and to attract more and more customers and that makes life easier for both the parties.
+Non-Unicode :
+
+Non Unicode is exactly opposite to Unicode. Using non Unicode it is easy to store languages like ‘English’ but 
+not other Asian languages that need more bits to store correctly otherwise truncation will occur.
+
+Now, let’s see some of the advantages of not storing the data in Unicode format:
+
+1. It takes less space to store the data in the database hence we will save lot of hard disk space. 
+2. Moving of database files from one server to other takes less time. 
+3. Backup and restore of the database makes huge impact and it is good for DBA’s that it takes less time
+
+
+
+
+
+ ////     CHAPTER 4:
+
+																CONSTRAINTS :
+
+
+	constraints are the rule defined and imposed while entering data into system 
+	Constraints can be specified when the table is created with the CREATE TABLE statement, or after the table is created with the ALTER TABLE statement.
+
+	following are most used constraint :
+	
+	1 . not null  :  
+	
+	If we specify a field in a table to be NOT NULL. Then the field will never accept null value. 
+	
+	eg :
+	
+	CREATE TABLE Student
+	(
+	ID int(6) NOT NULL,
+	NAME varchar(10) NOT NULL,
+	ADDRESS varchar(20)
+	);
+	
+	2. unique
+	
+			 if unique constraint is applied the the column cannot contain the duplicates
+			 CREATE TABLE Student
+			(
+			ID int(6) NOT NULL UNIQUE,
+			NAME varchar(10),
+			ADDRESS varchar(20)
+	        );
+	
+	3. primary key :  
+	
+		Primary Key is a field which uniquely identifies each row in the table. If a field in a table as primary key, then the field will not 
+		be able to contain NULL values as well as all the rows should have unique values for this field. So, in other words we can say that 
+		this is combination of NOT NULL and UNIQUE constraints.
+		A table can have only one field as primary key.Below query will create a table named Student and specifies the field ID as primary key.
+		CREATE TABLE Student
+		(
+		ID int(6) NOT NULL UNIQUE,
+		NAME varchar(10),
+		ADDRESS varchar(20),
+		PRIMARY KEY(ID)
+		);
+	
+	4. foreign key  :
+	
+	Foreign Key is a field in a table which uniquely identifies each row of a another table. That is, this field points to primary key of
+	another table. This usually creates a kind of link between the tables.
+	
+	CREATE TABLE Orders
+	(
+	O_ID int NOT NULL,
+	ORDER_NO int NOT NULL,
+	C_ID int,
+	PRIMARY KEY (O_ID),
+	FOREIGN KEY (C_ID) REFERENCES Customers(C_ID)
+	)
+	
+	5. check
+	
+	 Using the CHECK constraint we can specify a condition for a field, which should be satisfied at the time of entering values for this field.
+		For example, the below query creates a table Student and specifies the condition for the field AGE as (AGE >= 18 ). 
+	
+	CREATE TABLE Student
+	(
+	ID int(6) NOT NULL,
+	NAME varchar(10) NOT NULL,
+	AGE int NOT NULL CHECK (AGE >= 18)
+	);
+
+	6.Default : 
+	
+	This constraint is used to provide a default value for the fields. That is, if at the time of entering new records in the table if the user
+	does not specify any value for these fields then the default value will be assigned to them.
+	CREATE TABLE Student
+	(
+	ID int(6) NOT NULL,
+	NAME varchar(10) NOT NULL,
+	AGE int DEFAULT 18
+	);
+	
+	7. AUTO INCREMENT : 
+	
+	keyword by specifing Identity();
+	
+	
+	indentity(5,5)   starts assigning values from 5 and increments value by 5 at every row
+	idenetity(1,1)   starts assigning values from 1 adn increments value by 1 at every row 
+	
+	8. Index : 
+	
+	
+	
+	
+    
+	
+	
+	
+	
+	
+/// CHAPTER 5:
+											KEYS
+	1. unique key :
+		A unique key is a set of one or more than one fields/columns of a table that uniquely identify a record in a database table.
+		You can say that it is little like primary key but it can accept only one null value and it cannot have duplicate values.
+		The unique key and primary key both provide a guarantee for uniqueness for a column or a set of columns.
+		There is an automatically defined unique key constraint within a primary key constraint.
+		CREATE TABLE Student
+		(
+		ID int(6) NOT NULL UNIQUE,
+		NAME varchar(10),
+		ADDRESS varchar(20),
+		PRIMARY KEY(ID)
+		);
+		
+	
+	2. primary key :  
+	
+		Primary Key is a field which uniquely identifies each row in the table. If a field in a table as primary key, then the field will not 
+		be able to contain NULL values as well as all the rows should have unique values for this field. So, in other words we can say that 
+		this is combination of NOT NULL and UNIQUE constraints.
+		A table can have only one field as primary key.Below query will create a table named Student and specifies the field ID as primary key.
+		CREATE TABLE Student
+		(
+		ID int(6) NOT NULL UNIQUE,
+		NAME varchar(10),
+		ADDRESS varchar(20),
+		PRIMARY KEY(ID)
+		);
+	
+		Their can be more than 1 primary key. 
+
+	3. foreign key  :
+	
+	Foreign Key is a field in a table which uniquely identifies each row of a another table. That is, this field points to primary key of
+	another table. This usually creates a kind of link between the tables.
+	
+	CREATE TABLE Orders
+	(
+	O_ID int NOT NULL,
+	ORDER_NO int NOT NULL,
+	C_ID int,
+	PRIMARY KEY (O_ID),
+	FOREIGN KEY (C_ID) REFERENCES Customers(C_ID)
+	)
+
+	4. Composite Key
+		composite key is the combination of more than one coloumn in the table for uniquely identfication of row .
+		composite key can be combination of mor than one primary key 
+		
+
+//// CHAPTER 6:
+
+																SQL Functions
+
+SQL  Functions operate on complete sets of data and return a single result. PointBase supports five Aggregate Functions: AVG, COUNT, MAX, MIN, and SUM.
+
+
+AVG
+The AVG Function returns the average value for the column when applied to a column containing numeric data. The following is the syntax for the AVG Function.
+
+AVG (column_name)
+
+Example
+SELECT AVG(commission_rate) FROM sales_rep_tbl
+
+COUNT
+The COUNT Function returns the number of rows in a specified result set. The following syntax is one form of the COUNT Function:
+
+COUNT(*)
+
+Example
+SELECT COUNT(*) FROM sales_rep_tbl
+
+The second form of the COUNT Function returns the number of rows in a result set where the specified column has a distinct, non-NULL value. The following syntax is the second form of the COUNT Function.
+
+COUNT(DISTINCT column_name)
+
+MAX
+The MAX Function returns the data item with the highest value for a column when applied to a column containing numeric data. If you apply the MAX Function to a CHARACTER value, it returns the last value in the sorted values for that column. The following syntax is for the MAX Function.
+
+MAX(column_name)
+
+Example
+SELECT MAX(commission_rate) FROM sales_rep_tbl
+
+MIN
+The MIN Function returns the data item with the lowest value for a column when applied to a column containing numeric data. If you apply the MIN Function to a CHARACTER value, it returns the first value in the sorted values for that column. The following syntax is for the MIN Function.
+
+MIN(column_name)
+
+Example
+SELECT MIN(commission_rate) FROM sales_rep_tbl
+
+SUM
+The SUM Function returns the sum of all values in the specified column. The result of the SUM Function has the same precision as the column on which it is operating. The following syntax is for the SUM Function.
+
+SUM(column_name)
+
+Example
+SELECT SUM(ytd_sales) FROM sales_rep_tbl 
+
+																	Example
+
+create table customer ( custname varchar(20) , custID int , shopprice int);
+insert into customer values('pawan' , 4 , 5200) --total recod 5200*1 and 200*15 Name is same for all
+select * from customer;
+-- function in the SQL:->
+
+SELECT AVG(shopprice)
+FROM customer
+WHERE shopprice>100;
+--o/p = 512
+
+SELECT count(shopprice)
+FROM customer
+WHERE shopprice<300;
+
+--o/p = 15
+
+select count(*) from customer
+
+-- o/p = 16
+
+SELECT count(distinct shopprice)
+FROM customer
+
+-- o/p = 2
+
+
+SELECT count(distinct custname)
+FROM customer
+
+--o/p = 1
+
+select max(shopprice) from customer // same for Min =200
+
+--o/p = 5200
+
+select sum(shopprice) from customer
+
+-- o/p = 8200
+
+
+
+
+
+//// chapter 7:
+
+														DataBase Command:
+
+
+their diffrent types of commands in SQL
+
+1. DDL - data defination languages
+2. DML - data manupulation Language
+3. DCL - Data Control language
+4. DTL - Data Transaction language
+5. DQL - Data Query Language
+6. Data administration commands
+
+A] Data Definatiion Language
+
+DDL is a part of SQL that allows a database user to create database objects ,such
+ as the creation or deletion of tables 
+ some of the most fundamental DDL commands are
+ create table 
+ alter table
+ drop table
+ drop index
+ create index 
+ create view 
+ drop view
+ 
+B] Data Manupultuion languages
+
+used to manupulate data within objects of relational database
+
+there are three basic command 
+insert update delete 
+
+
+C] Data Query language
+though compramised of only one command .DQL is most concentrated
+ focus of SQL for mordern relational database users.
+ 
+ Command : select.
+
+ D] Data control Language :
+	Data control commands  in SQL allow you to control access to data 
+	within the database .These DCL commands are normally used to creatte objects related to
+	user access and also control the distribution of privilages among users . Some data control commands are as follows 
+	Alter passwrod 
+	grant
+	revoke
+	create synonym 
+
+	
+E] Data Administration languages
+	
+	data Amdinistration languages allow the user to perform audits and perform anlyses on operation wtihin the database .
+	they can also be used to help to analyze system perfomance . two general data administration commands are as follows -
+start audit
+stop audit 
+
+
+F] Transactional Control Commands 
+
+
+in addition to the previously introdyced categories of command s ther are the commands that allow the user to manage database 
+transaction .
+
+		COMMIT saves database trancation
+		
+		ROLLBACK undo's databse transaction
+		
+		
+		
+--------------------------------------------------------
+* CREATE DATABASE database_name;   .......... to create database
+
+* DROP DATABASE database_name; ........... to delete database
+
+* ALTER DATABASE [old_db_name] MODIFY NAME = [new_db_name] ; .........to ranme database
+
+* use [database_name]   . ........ select database 
+
+* CREATE TABLE [table_name]  ( "column_name" [datatype] , "column_name2" [datatype] ,.... );   ........... to create Table
+eg.  create table Student(ID int,name varchar(20),address varchar(20),image blob );
+
+* DROP TABLE [table_name]   ........o delete table 
+
+* EXEC sp_help ['table_name'] ................... to have information about databse and tables
+
+* DELETE FROM [table_name] WHERE [condition]  ..... delete the which satisfies the given condition
+	DELETE FROM [table_name] ...... if condition is not specified then it will delete all the rows
+	
+* TRUCATE TABLE [table_name]  ........... delete all the rows from table
+
+* RENAME [old_table_name ] TO [new_table_name ]     ................ rename the table  
+
+* SELECT* INTO [destination_databse_name] FROM [source_database_name]   ........... IT copies the data from one databse to another database 
+
+																					but databse 2 should not be already create.
+* ALTER TABLE ....................  it is used in four ways 1) to add column 2) modifying column 3) To drop column 4) to rename column
+
+1.  ALTER TABLE [table_name] ADD [column_name] column-definition;
+2.  ALTER TABLE [table_name] MODIFY [column_name] column_type;        ... NOT WORKING PROPERLY
+3.  ALTER TABLE [table_name] DROP COLUMN [column_name];
+4.  ALTER TABLE [table_name] RENAME COLUMN [old_name] to [new_name];    ... NOT WORKING PROPERLY
+
+* SELECT   = used to select data from database  , data returnded is stored in result database 
+select [Col-Names] from [table-name] || Clauses 
+select * from customers;
+select custname , custid,country from customer;
+
+* SELECT DISTINCT =  selects unique data elements from specified parameter
+select distinct country, customername  from customers
+
+* select top[no] from [table_name];
+
+* SELECT FIRST (CUSTOMER_NAME) AS first_customer FROM CUSTOMERS;     .... display first row of given column
+
+* SELECT LAST (column_name) FROM table_name;  ...... not supported in SQL 
+
+ hence similar functionality can acheived by following query
+ -> select top 1 [column_name] from [table_name] ORDER BY [column_name] DESC ;
+ 
+* SQL select random returns any random row from table 
+
+-> SELECT TOP 1 [column_name] FROM [table_name] ORDER BY NEW ID()
+
+* SQL SELECT AS --- assigns temp name for table 
+-> SELECT [column1_name] AS "subname1" [column2_name] As "subname2",  column3_name,  column4_name,  FROM orders;  
+
+* SELECT * FROM [table_name] where [Column_Name] IN (condtion) .... IN minimizes the multiple OR statements
+->  select * from stud3 where id in (1,2,3)
+
+* -> select s.id , s1.name from std as s inner join std1 as s1 on s.id=1      ... select from multiple columns
+
+* Where SQL is NULL
+-> select * from [table_name] where [column_name] is NULL
+
+* Where SQL is NOTNULL
+-> select * from [table_name] where [coloumn_name ]  IS NOT NULL  
+
+* WHERE = it derives the condition form fetching result
+-> select *from customer where age> 18;
+
+* WHERE (AND OR NOT) = and or not can be used with to specify multiple condition 
+-> select * from customer where (age>10 AND age<10) OR (NOT country = 'BERLIN')
+
+
+* ORDER BY = uit is used to sort result by ascending or descnding order.(By default it sorts bye ascending order)
+to sort record i descending order use the keyword DESC
+-> SELECT* from customers order by customerid DESC // for desc order 
+-> select * from customer order by customerid , customername
+	
+* INSERT INTO : used to insert record :
+-> INSERT INTO student (ID, NAME) VALUES (1, 'ARMAAN'), (2, 'BILLY'), (3, 'CHARLIE');  ... insert multiple record
+-> insert into tble_name values(record);
+
+* UPDATE [table_name] SET [field1 = new-value1], [field2 = new-value2] WHERE (conditions)
+-> UPDATE students  SET User_Name = 'beinghuman'  WHERE Student_Id = '3'  
+-> UPDATE students  SET User_Name = 'beserious', First_Name = 'Johnny'  WHERE Student_Id = '3'  ..update multiple feilds
+
+* SQL UPDATE JOIN means we will update one table using another table and join condition.
+->UPDATE customer_table  INNER JOIN  Customer_table  ON customer_table.rel_cust_name = customer_table.cust_id  
+	SET customer_table.rel_cust_name = customer_table.cust_name  
+	
+* VIEW 
+-> CREATE VIEW view_name AS   SELECT columns  FROM tables  WHERE conditions;  
+-> DROP VIEW view_name  
+
+* SQL DELETE JOIN
+-> DELETE [target table] FROM [table1] INNER JOIN [table2] ON [table1.[joining column] = [table2].[joining column] WHERE [condition]  
+
+* SQL UPDATE JOIN
+-> UPDATE [target table] SET [target column] = [new value] FROM [table1] INNER JOIN [table2] ON [table1.[joining column] = [table2].[joining column] WHERE [condition]  
+
+* SQL OUTER JOIN
+In the SQL outer JOIN all the content of the both tables are integrated together either they are matched or not.
+there are two types of outer JOIn 
+1.Left outer join (also known as left join): this join returns all the rows from left table combine with the matching rows of the right
+  table. If you get no matching in the right table it returns NULL values.
+  
+ -> SELECT table1.column1, table2.column2....  FROM table1   LEFTJOIN table2  ON table1.column_field = table2.column_field;  
+
+2.Right outer join (also known as right join): this join returns all the rows from right table are combined with the matching rows of left table .
+  If you get no column matching in the left table .it returns null value.
+  
+ -> SELECT table1.column1, table2.column2.....  FROM table1   RIGHT JOIN table2  ON table1.column_field = table2.column_field;  
+ 
+* SQL FULL JOIN
+The SQL full join is the result of combination of both left and right outer join and the join tables have all the records from both tables. 
+It puts NULL on the place of matches not found.
+
+
+* SQL FULL OUTER JOIN
+SQL full outer join and SQL join are same. generally it is known as SQL FULL JOIN.
+SQL full outer join is used to combine the result of both left and right outer join and returns all rows (don?t care its matched or unmatched) 
+from the both participating tables.
+
+->SELECT *  FROM table1  FULL OUTER JOIN table2  
+	ON table1.column_name = table2.column_name;  
+
+	
+* SQL wildcard : 
+It is used to substite any char in string.
+They are used with SQL LIKE operator . LIKE operator is used in a where clause to search for a specified pattern in a column.
+there are two wildcard used with LIKE operator 
+% percentage represent zero, one ,or multiple character
+_ represents single character 	
+		NOTE : 	(MS ACCESS uses ? instead of  _)
+
+		SQL server uses 
+		[charlist] - Defines sets and ranges of characters to match
+		[^charlist] or [!charlist] - Defines sets and ranges of characters NOT to match
+Eg: 
+-> WHERE CustomerName LIKE 'a%'		Finds any values that starts with "a"
+-> WHERE CustomerName LIKE '%a'		Finds any values that ends with "a"
+-> WHERE CustomerName LIKE '%or%'	Finds any values that have "or" in any position
+-> WHERE CustomerName LIKE '_r%'	Finds any values that have "r" in the second position
+-> WHERE CustomerName LIKE 'a_%_%'	Finds any values that starts with "a" and are at least 3 characters in length
+-> WHERE ContactName LIKE 'a%o'		Finds any values that starts with "a" and ends with "o"
+-> WHERE ContactName LIKE 'a_e' 	Finds any values that start with a and ends with e and has only one letter in between and lenght = 3
+Eg:
+-> WHERE City LIKE '_erlin';
+-> WHERE City LIKE 'L_n_on';
+-> WHERE City LIKE '[bsp]%';    	Selects all customers with a City starting WITH "b", "s", or "p":
+-> WHERE City LIKE '[!bsp]%';  		Selects all the customer with cith starting WITHOUT b s p ;
+
+* SQL UNION OPERATOR
+
+the UNION opearator is used to combine the resultset  of two or more SELECT statement.
+Each SELECT statement within UNION must have the same number of columns
+The columns must also have similar data types
+The columns in each SELECT statement must also be in the same order
+-> SELECT column_name(s) FROM table1  UNION SELECT column_name(s) FROM table2;
+
+NOTE:The UNION operator selects only distinct values by default. To allow duplicate values, use UNION ALL.
+
+* The SQL GROUP BY Statement
+The GROUP BY statement is often used with aggregate functions (COUNT, MAX, MIN, SUM, AVG) to group the result-set by one or more columns.
+
+-> SELECT column_name(s)
+FROM table_name
+WHERE condition
+GROUP BY column_name(s)
+ORDER BY column_name(s);
+
+* SQL HAVING Clause
+The HAVING clause was added to SQL because the WHERE keyword could not be used with aggregate functions.
+-> SELECT column_name(s)
+FROM table_name
+WHERE condition
+GROUP BY column_name(s)
+HAVING condition
+ORDER BY column_name(s);
+
+-> SELECT COUNT(CustomerID), Country
+FROM Customers
+GROUP BY Country
+HAVING COUNT(CustomerID) > 5;
+
+* SQL EXISTS Operator :
+The EXISTS operator is used to test for the existence of any record in a subquery.
+
+The EXISTS operator returns true if the subquery returns one or more records.
+
+-> SELECT column_name(s)
+FROM table_name
+WHERE EXISTS
+(SELECT column_name FROM table_name WHERE condition);
+
+* SQL ANY and ALL Operators :
+The ANY and ALL operators are used with a WHERE or HAVING clause.
+The ANY operator returns true if any of the subquery values meet the condition.
+The ALL operator returns true if all of the subquery values meet the condition.
+
+-> SELECT column_name(s)
+FROM table_name
+WHERE column_name operator ANY
+(SELECT column_name FROM table_name WHERE condition);
+
+->SELECT column_name(s)
+FROM table_name
+WHERE column_name operator ALL
+(SELECT column_name FROM table_name WHERE condition);
+
+* SQL INSERT INTO SELECT Statement :
+The INSERT INTO SELECT statement copies data from one table and inserts it into another table.
+INSERT INTO SELECT requires that data types in source and target tables match
+The existing records in the target table are unaffected
+Copy all columns from one table to another table:
+
+-> INSERT INTO table2
+SELECT * FROM table1
+WHERE condition;
+
+-> INSERT INTO table2 (column1, column2, column3, ...)
+SELECT column1, column2, column3, ...
+FROM table1
+WHERE condition;
+
+
+* FETCH and OFFSET commands .
+
+They are only used with  order by clause ..
+
+1. orderby .. offset ...
+2.orderby ... offset ... fetch
+
+OFFSET argument is used to say starting point of row to be displayed . Offset should have value greater than equal to zero   but not negative . 
+
+-> select column_names from table_name where condition order by [column_name]  OFFSET no_of_rows ROWS.
+-> SELECT Id,fname FROM stud_table WHERE id>2 ORDER BY id ASC OFFSET 2 ROWS FETCH NEXT 5 ROWS
+
+NOTE : 
+fetch cannot  be taken alonr ...... For fetch offset is madatory .
+top cannnot be combined with offset and fetch .
+1) Apart from SELECT queries, you can use WHERE clause with UPDATE and DELETE clause but HAVING clause can only be used with SELECT query. 
+2) WHERE clause is used for filtering rows and it applies on each and every row, while HAVING clause is used to filter groups in SQL.
+3) One syntax level difference between WHERE and HAVING clause is that, former is used before GROUP BY clause, while later is used after GROUP BY clause.
+4) When WHERE and HAVING clause are used together in a SELECT query with aggregate function,  WHERE clause is applied first on individual rows and only
+ rows which pass the condition is included for creating groups. Once group is created, HAVING clause is used to filter groups based upon condition specified.
+
+
+* Grant / Revoke Privileges
+Granting Privileges :
+
+We have already learned about how to create user in MySQL using MySQL | create user statement. But using the Create User Statement only creates a new user but 
+does not grant any privileges to the user account.Therefore to grant privileges to a user account, the GRANT statement is used. 
+ 
+-> GRANT privileges_names ON object TO user; 
+privilage can be any command For EG : select update delete create drop alter etc .
+
+EG -> GRANT SELECT ON Users TO'Amit'@'localhost;
+
+-> SHOW GRANTS FOR  'Amit'@localhost';  to check which permissions has been granted to particular user .
+
+REVOKING PRIVILAGES :
+
+
+revoke privilages on object to that were granted.
+
+-> REVOKE privileges_names ON object TO user; 
+
+
+* Transaction Control Commands (TCL ):
+1) COMMIT command
+COMMIT command is used to permanently save any transaction into the database.
+When we use any DML command like INSERT, UPDATE or DELETE, the changes made by these commands are not permanent,
+ until the current session is closed, the changes made by these commands can be rolled back.
+To avoid that, we use the COMMIT command to mark the changes as permanent.
+
+EG -> COMMIT;
+
+2) ROLLBACK command
+This command restores the database to last commited state. It is also used with SAVEPOINT command to jump to a savepoint in an ongoing transaction.
+If we have used the UPDATE command to make some changes into the database, and realise that those changes were not required, then we can use the 
+ROLLBACK command to rollback those changes, if they were not commited using the COMMIT command.
+
+EG-> ROLLBACK TO savepoint_name;
+
+3) SAVEPOINT command
+SAVEPOINT command is used to temporarily save a transaction so that you can rollback to that point whenever required.
+
+EG -> SAVEPOINT savepoint_name;
+In short, using this command we can name the different states of our data in any table and then rollback to that state using the ROLLBACK command whenever required.
+
+4) SET TRANSACTION
+SET TRANSACTION is used for placing a name on a transaction.
+EG ->SET TRANSACTION [Read Write | Read Only];
+You can specify a transaction to be read only or read write.
+This command is used to initiate a database transaction.
+
+
+# .. Properties of Transaction managements :
+Every transaction follows some transaction properties these are called ACID properties
+
+1. Atomicity: Atomicity of a transaction is nothing but in a transaction either all operations can be done or all operation can be undone,
+ but some operations are done and some operation are undone should not occur.
+2. Consistency: Consistency means, after a transaction completed with successful, the data in the data store should be a reliable data this
+ reliable data is also called as consistent data.
+3. Isolation: Isolation means, if two transaction are going on same data then one transaction will not disturb another transaction.
+4. Durability: Durability means, after a transaction is completed the data in the data store will be permanent until another transaction is 
+going to be performed on that data.
+ 
+ //// chapter 8:
+
+														JOINS:
+													
+
+A JOIN clause is used to combine rows from two or more tables, based on a related column between them.													
+ 
+ 
+Different Types of SQL JOINs
+Here are the different types of the JOINs in SQL:
+
+(INNER) JOIN: Returns records that have matching values in both tables
+LEFT (OUTER) JOIN: Return all records from the left table, and the matched records from the right table Otherwise Fills record with NULL 
+RIGHT (OUTER) JOIN: Return all records from the right table, and the matched records from the left table Otherwise Fills record with NULL 
+FULL (OUTER) JOIN: Return all records when there is a match in either left or right table 
+
+  
+ Q) perform Joing operation without using join key keyword
+ Ans : 
+ = W3 SCHOOL -196 Records
+ 
+1. Using Join
+SELECT Orders.OrderID, Customers.CustomerName, Orders.OrderDate
+FROM Orders
+INNER JOIN Customers
+ON Orders.CustomerID=Customers.CustomerID;
+ 
+2. Without using Join
+SELECT OrderID FROM Orders where (select CustomerID from Customers where (Customers.CustomerID=Orders.CustomerID));
+ 
+Q) But What To perfer While it comes to selection SUBQUERY or JOIN?
+ Ans :
+ Subquery is in more readable Format than Join but when it comes to performance Join works faster than subquery
+ 
+  //// chapter 9:
+
+														INDEXES:
+											
+											
+	They are special LookUps that database search engine can use to speed up data retrival
+	
+	An index is used to speed up searching in the database
+	An index can be used to efficiently find all rows matching some column in your query and then walk through only that subset of the table to
+	find exact matches. If you don't have indexes on any column in the WHERE clause, the SQL server have to walk through the whole table and
+	check every row to see if it matches, which may be a slow operation on big tables.
+* CREATE INDEX Syntax
+ Creates an index on a table. Duplicate values are allowed:
+-> CREATE INDEX index_name ON table_name (column1, column2, ...);
+
+* Creates a unique index on a table. Duplicate values are not allowed:
+->CREATE UNIQUE INDEX index_name ON table_name (column1, column2, ...);
+ 
+EG -> CREATE INDEX idx_pname ON Persons (LastName, FirstName);
+
+* DROP INDEX 
+-> DROP INDEX table_name.index_name;
+
+there Are two types of indexes in SQL 
+- Clustered Index 
+- Non Clustered Index 	
+
+NOTE :
+- An index helps to speed up SELECT queries and WHERE clauses, but it slows down data input, with the UPDATE and the INSERT statements. 
+  Indexes can be created or dropped with no effect on the data.
+- Indexing in SQL uses B+ Tree architecture for fast retrival 
+ 
+  //// chapter 10:
+
+														Trigger:
+														
+														
+	
+	A SQL trigger is a set of  SQL statements stored in the database catalog.
+	A SQL trigger is executed or fired whenever an event associated with a table occurs e.g.,  insert, update or delete.
+	A SQL trigger is a special type of stored procedure. It is special because it is not called directly like a stored procedure. 
+	The main difference between a trigger and a stored procedure is that a trigger is called automatically when a data modification 
+	event is made against a table whereas a stored procedure must be called explicitly.
+	  
+	There are three action query types that you use in SQL which are INSERT, UPDATE and DELETE. 
+	Basically, triggers are classified into two main types:
+	- After Triggers (For Triggers)
+	- Instead Of Triggers 
+	
+* After Triggers
+	These triggers run after an insert, update or delete on a table. They are not supported for views.
+	AFTER TRIGGERS can be classified further into three types as:
+	- AFTER INSERT Trigger : 
+	- AFTER UPDATE Trigger
+	- AFTER DELETE Trigger
+
+
+	NOTE : Refer File Trigger.txt (.pdf) For more Information . 
+	  
+	  
+	   //// chapter 11:
+
+														CURSOR:
+														
+	Cursor is a database object which is used to retreive data from resultset one row at a time .The cursor 
+	can be used when data needs to be modified row by row .
+	A cursor is a temporary work area created in system memory when an SQL statement is executed.
+	A cursor is a set of rows together with a pointer that identifies a current row. 
+	It is a database object to retrieve data from a result set one row at a time. 
+	It is useful when we want to manipulate the record of a table in a singleton method, in other words one row at a time. 
+	In other words, a cursor can hold more than one row, but can process only one row at a time. 
+	The set of rows the cursor holds is called the active set.
+	
+	Cursor Life-Cycle :
+	
+	1 (DECLARE CURSOR )Declaring cursor : Cursor is defined by declaring the SQL statement.
+	2 (OPEN ) opening cursor : Cursor is opened for storing data retrived from resultset 
+	3 (FETCH ) Fetching cursor : when cursor is opened rows can be fetched from the cursor one by one or in a block to do the data manupulation
+	4 (CLOSE ) closing cursor : cursor should be closed explicitly after data manupulation .
+	5 (DEALLOCATE ) deallocating cursor : Cursor should be deallocated to delete cursor defination and released system resources allocated by cursor .
+	
+    Eg :
+    use Product_Database  
+		
+	SET NOCOUNT ON;    
+	DECLARE @emp_id int ,@emp_name varchar(20),    
+		@message varchar(max);    
+	PRINT '-------- EMPLOYEE DETAILS --------';     
+	DECLARE emp_cursor CURSOR FOR     
+	SELECT emp_id,emp_name    
+	FROM Employee  
+	order by emp_id;      
+	OPEN emp_cursor    	  
+	FETCH NEXT FROM emp_cursor     
+	INTO @emp_id,@emp_name    	  
+	print 'Employee_ID  Employee_Name'       	  
+	WHILE @@FETCH_STATUS = 0    
+	BEGIN    
+		print '   ' + CAST(@emp_id as varchar(10)) +'           '+  
+			cast(@emp_name as varchar(20))  	  		  
+		FETCH NEXT FROM emp_cursor     
+	INTO @emp_id,@emp_name    	   
+	END     
+	CLOSE emp_cursor;    
+	DEALLOCATE emp_cursor;   
+
+	
+	There are the following two types of Cursors:
+	- Implicit Cursor : These types of cursors are generated and used by the system during the manipulation of a DML query (INSERT, UPDATE and DELETE).
+						An implicit cursor is also generated by the system when a single row is selected by a SELECT command.
+
+	- Explicit Cursor : This type of cursor is generated by the user using a SELECT command.
+						An explicit cursor contains more than one row, but only one row can be processed at a time.
+						An explicit cursor moves one by one over the records. An explicit cursor uses a pointer that holds the record of a row.
+						After fetching a row, the cursor pointer moves to the next row.
+	
+	* Cursor Scope :
+	Microsoft SQL Server supports the GLOBAL and LOCAL keywords on the DECLARE CURSOR statement to define the scope of the cursor name.
+	- GLOBAL: specifies that the cursor name is global to the connection.
+	- LOCAL: specifies that the cursor name is local to the Stored Procedure, trigger or query that holds the cursor.
+	
+	* Data Fetch Option in Cursors
+	Microsoft SQL Server supports the following two fetch options for data:
+
+	- FORWARD_ONLY: Specifies that the cursor can only be scrolled from the first to the last row.
+	- SCROLL: It provides 6 options to fetch the data (FIRST, LAST, PRIOR, NEXT, RELATIVE and ABSOLUTE).
+	
+	* Types of cursors
+	Microsoft SQL Server supports the following 4 types of cursors.
+	- STATIC CURSOR: A static cursor populates the result set during cursor creation and the query result is cached for the lifetime of the cursor.
+					A static cursor can move forward and backward.
+	- FAST_FORWARD: This is the default type of cursor. It is identical to the static except that you can only scroll forward.
+	- DYNAMIC: In a dynamic cursor, additions and deletions are visible for others in the data source while the cursor is open.
+	- KEYSET: This is similar to a dynamic cursor except we can't see records others add. If another user deletes a record, it is inaccessible from our record set.
+
+															
+	EG: Displaying data of table:
+
+SET NOCOUNT ON  
+DECLARE @EMP_ID INT  
+DECLARE @EMP_NAME NVARCHAR(MAX)  
+DECLARE @EMP_SALARY INT  
+DECLARE @EMP_CITY NVARCHAR(MAX)  
+  
+DECLARE EMP_CURSOR CURSOR  
+LOCAL  FORWARD_ONLY  FOR  
+SELECT * FROM Employee  
+OPEN EMP_CURSOR  
+FETCH NEXT FROM EMP_CURSOR INTO  @EMP_ID ,@EMP_NAME,@EMP_SALARY,@EMP_CITY  
+WHILE @@FETCH_STATUS = 0  
+BEGIN  
+PRINT  'EMP_ID: ' + CONVERT(NVARCHAR(MAX),@EMP_ID)+  '  EMP_NAME '+@EMP_NAME +'  EMP_SALARY '  +CONVERT(NVARCHAR(MAX),@EMP_SALARY)  +  '  EMP_CITY ' +@EMP_CITY  
+FETCH NEXT FROM EMP_CURSOR INTO  @EMP_ID ,@EMP_NAME,@EMP_SALARY,@EMP_CITY  
+END  
+CLOSE EMP_CURSOR  
+DEALLOCATE EMP_CURSOR  
+
+
+o/p  :
+EMP_ID: 1 EMP_NAME Pankaj EMP_SALARY 25000 EMP_CITY Alwar
+EMP_ID: 2 EMP_NAME Rahul EMP_SALARY 26000 EMP_CITY Alwar
+EMP_ID: 3 EMP_NAME Sandeep EMP_SALARY 25000 EMP_CITY Alwar
+EMP_ID: 4 EMP_NAME Sanjeev EMP_SALARY 24000 EMP_CITY Alwar
+EMP_ID: 5 EMP_NAME Neeraj EMP_SALARY 28000 EMP_CITY Alwar
+EMP_ID: 6 EMP_NAME Naru EMP_SALARY 20000 EMP_CITY Alwar
+EMP_ID: 7 EMP_NAME Omi EMP_SALARY 23000 EMP_CITY Alwar	
+	
+										
+	 //// chapter 11:
+
+														STORED PROCEDURE:													
+	
+	
+	stored Procedure is nothing but an SQL code that you can use again and agian .. Instead of rewritin query again and again 
+	In addition to running the same SQL code over and over again you also have the ability to pass parameters to the stored procedure,
+	so depending on what the need is the stored procedure can act accordingly based on the parameter values that were passed.
+
+	* create a stored procedure :
+
+	CREATE PROCEDURE dbo.uspGetAddress
+	AS
+	SELECT * FROM Person.Address
+	GO
+	
+	* To call the procedure to return the contents from the table specified, the code would be:
+
+	EXEC dbo.uspGetAddress
+	-- or
+	EXEC uspGetAddress
+	--or just simply
+	uspGetAddress
+		
+	* create a procedure with parameters : 
+	
+	-> One Parameter
+	CREATE PROCEDURE dbo.uspGetAddress @City nvarchar(30)
+	AS
+	SELECT * 
+	FROM Person.Address
+	WHERE City = @City
+	GO
+		
+	To call this stored procedure we would execute it as follows:
+
+	  Command : EXEC dbo.uspGetAddress @City = 'New York'
+	 
+	  
+	* getting reult from stored Procedure
+		
+	Setting up output paramters for a stored procedure is basically the same as setting up input parameters,
+	the only difference is that you use the OUTPUT clause after the parameter name to specify that it should return a value.
+	The output clause can be specified by either using the keyword "OUTPUT" or just "OUT".
+	For these examples we are still using the AdventureWorks database, so all the stored procedures should be created in the AdventureWorks database.
+
+	Simple Output
+	CREATE PROCEDURE dbo.uspGetAddressCount @City nvarchar(30), @AddressCount int OUTPUT
+	AS
+	SELECT @AddressCount = count(*) 
+	FROM AdventureWorks.Person.Address 
+	WHERE City = @City
+	Or it can be done this way:
+
+	CREATE PROCEDURE dbo.uspGetAddressCount @City nvarchar(30), @AddressCount int OUT
+	AS
+	SELECT @AddressCount = count(*) 
+	FROM AdventureWorks.Person.Address 
+	WHERE City = @City
+	To call this stored procedure we would execute it as follows.  First we are going to declare a variable, execute the stored procedure and then select the returned valued.
+
+	DECLARE @AddressCount int
+	EXEC dbo.uspGetAddressCount @City = 'Calgary', @AddressCount = @AddressCount OUTPUT
+	SELECT @AddressCount
+	This can also be done as follows, where the stored procedure parameter names are not passed.
+
+	DECLARE @AddressCount int
+	EXEC dbo.uspGetAddressCount 'Calgary', @AddressCount OUTPUT
+	SELECT @AddressCount
+		
+
+	//// chapter 12:
+
+														VIEWS:
+	
+	Views are generally refered to be known as virtual table .
+	Views also have rows as well as columns as tey are in real table.
+	We can create View by selecting columns from diff table.
+	
+	* creating view :
+	
+	CREATE VIEW [view_name] AS
+	select col1, col2 ....
+	from [table_name ]
+	where [condition];
+	
+	
+	* Displaying the view 
+	
+	select * from view_name;
+	
+	* creating views from multiple columns : 
+	
+	create view Stud_detail_view AS
+	select stud.studID , std.stdId ,stud.studName ,std.standardName
+	FROM stud , std
+	std.stdId=stud.stdId;
+	
+	* DROP VIEW:
+	
+	DROP VIEW [view_name];
+	
+	* Criteria for UPDATING view :
+	There are certain conditions needed to be satisfied to update a view. If any one of these conditions is not met, then we will not be allowed to update the view.
+	1 The SELECT statement which is used to create the view should not include GROUP BY clause or ORDER BY clause.
+	2 The SELECT statement should not have the DISTINCT keyword.
+	3 The View should have all NOT NULL values.
+	4 The view should not be created using nested queries or complex queries.
+	5 The view should be created from a single table. If the view is created using multiple tables then we will not be allowed to update the view.
+	
+	* CREATE OR REPLACE VIEW statement to add or remove fields from a view.
+	Syntax:
+	CREATE OR REPLACE VIEW view_name AS
+	SELECT column1,coulmn2,..
+	FROM table_name
+	WHERE condition;
+	
+	EG :For example, if we want to update the view MarksView and add the field AGE to this View from StudentMarks Table, we can do this as:
+
+	CREATE OR REPLACE VIEW MarksView AS
+	SELECT StudentDetails.NAME, StudentDetails.ADDRESS, StudentMarks.MARKS, StudentMarks.AGE
+	FROM StudentDetails, StudentMarks
+	WHERE StudentDetails.NAME = StudentMarks.NAME;
+															
+	* Inserting a row in a view:
+	We can insert a row in a View in a same way as we do in a table. 
+	We can use the INSERT INTO statement of SQL to insert a row in a View.Syntax:
+	INSERT view_name(column1, column2 , column3,..) 
+	VALUES(value1, value2, value3..);
+
+	EG :
+	In the below example we will insert a new row in the View DetailsView which we have created above in the example of “creating views from a single table”.
+
+	INSERT INTO DetailsView(NAME, ADDRESS)
+	VALUES("Suresh","Gurgaon");													
+														
+	* Deleting a row from a View:
+	Deleting rows from a view is also as simple as deleting rows from a table. We can use the DELETE statement of SQL to delete rows from a view. Also deleting a row from a view first delete the row from the actual table and the change is then reflected in the view.Syntax:
+	DELETE FROM view_name
+	WHERE condition;
+
+	EG : In this example we will delete the last row from the view DetailsView which we just added in the above example of inserting rows.
+
+	DELETE FROM DetailsView
+	WHERE NAME="Suresh";
+													
+	 //// chapter 13:
+
+														NORMALISATION:		
+	
+Normalisation splits the large table into smaller table and define elationship between them to increase the clarity in organizing data .
+ There are two goals of the normalization process: eliminating redundant data (for example, storing the same data in more than one table)
+ and ensuring data dependencies make sense (only storing related data in a table).
+Benefits :
+    Eliminate data redundancy
+    Improve performance
+    Query optimization
+    Faster update due to less number of columns in one table
+    Index improvement
+ 
+Normalisation can be acheived by following some set of forms OR rules :
+
+1NF,2NF,3NF,BCNF,4NF,5NF.
+
+* 1NF : EACH COLOUMN IS UNIQUE
+
+Sample Employee table, it displays employees are working with multiple departments.
+Employee	Age	Department
+--------------------------
+Melvin		32	Marketing, Sales
+Edward		45	Quality Assurance
+Alex		36	Human Resource
+
+Employee table following 1NF:
+Employee	Age	Department
+----------------------------
+Melvin		32	Marketing
+Melvin		32	Sales
+Edward		45	Quality Assurance
+Alex		36	Human Resource
+
+* 2NF : 
+For a table to be in the Second Normal form, it should be in the First Normal form and it should not have Partial Dependency.
+Partial Dependency exists, when for a composite primary key, any attribute in the table depends only on a part of the primary key and not on the complete primary key.
+To remove Partial dependency, we can divide the table, remove the attribute which is causing partial dependency, and move it to some other table where it fits in well.
+Single Column Primary Key .
+The entity should be considered already in 1NF and all attributes within the entity should depend solely on the unique identifier of the entity.
+
+Sample Products table:
+productID	product		Brand
+--------------------------------
+1			Monitor		Apple
+2			Monitor		Samsung
+3			Scanner		HP
+4			Head phone	JBL
+
+Product table following 2NF:
+
+Products Category table:
+productID	product
+-----------------------
+1			Monitor
+2			Scanner
+3			Head phone
+
+Brand table:
+brandID	brand
+--------------
+1		Apple
+2		Samsung
+3		HP
+4		JBL
+
+Products Brand table:
+pbID	productID	brandID
+1			1			1
+2			1			2
+3			2			3
+4			3			4
+
+* 3NF : 
+Be in 2NF
+Has no transitive functional dependencies
+What are transitive functional dependencies?
+-> A transitive functional dependency is when changing a non-key column, might cause any of the other non-key columns to change 
+
+To move our 2NF table into 3NF, we again need to again divide our table.
+
+* Problems Without Normalization :
+
+If a table is not properly normalized and have data redundancy then it will not only eat up extra memory space but will also make
+it difficult to handle and update the database, without facing data loss. Insertion, Updation and Deletion Anamolies are very frequent 
+if database is not normalized. To understand these anomalies let us take an example of a Student table.
+
+rollno	name	branch	hod		office_tel
+-----------------------------------------
+401 	Akon	CSE	    Mr. X	53337
+402  	Bkon	CSE 	Mr. X	53337
+403	    Ckon	CSE 	Mr. X	53337
+404		Dkon	CSE		Mr. X	53337
+
+In the table above, we have data of 4 Computer Sci. students. As we can see, data for the fields branch, hod(Head of Department) 
+and office_tel is repeated for the students who are in the same branch in the college, this is Data Redundancy.
+-> Insertion Anomaly =
+Suppose for a new admission, until and unless a student opts for a branch, data of the student cannot be inserted, 
+or else we will have to set the branch information as NULL.
+Also, if we have to insert data of 100 students of same branch, then the branch information will be repeated for all those 100 students.
+These scenarios are nothing but Insertion anomalies.
+-> Updation Anomaly =
+What if Mr. X leaves the college? or is no longer the HOD of computer science department? 
+In that case all the student records will have to be updated, and if by mistake we miss any record, it will lead to data inconsistency.
+This is Updation anomaly.
+->Deletion Anomaly =
+In our Student table, two different informations are kept together, Student information and Branch information. 
+Hence, at the end of the academic year, if student records are deleted, we will also lose the branch information. This is Deletion anomaly.
+
+
+\\\\ CHAPTER 14
+									PRINCIPLES OF DATABASE 
+									
+	Following are E.F. Codd’s Twelve Principles of Relational Databases.
+	These principles continue to be the litmus test used to validate the “relational” characteristics of a database product; 
+	a database product that does not meet all of these rules is not fully relational. These rules do not apply to applications development,
+	but they do determine whether the database engine itself can be considered truly “relational.” Currently, most RDBMSs pass Codd’s test
+	, including all of the databases discussed in this book, except MySQL. (MySQL does not currently support views or atomic transactions.
+	Therefore, it does not qualify as a true relational DBMS under Codd’s rules.)
+
+Codd’s Rules for a Truly Relational Database System :
+Codd’s criteria provide the benchmarks for defining RDBs. Knowing and understanding these principles will help you develop and design RDBs:
+
+1. Information is represent in logical tables/.
+2. Data must be logically accessible by primary key , coloumn
+3. Null values must be treated as missing value not as string or space or as zeros
+4. Metadata must be stored just as regular data 
+5. A single language must be able to define data, views, integrity constraints, authorization, transactions, and data manipulation.
+6. Views must show the updates of their base tables and vice versa.
+7. A single operation must be able to retrieve, insert, update, or delete data.
+8. Batch and end-user operations are logically separate from physical storage and access methods.
+9. Batch and end-user operations can change the database schema without having to recreate it or the applications built upon it.
+10.Integrity constraints must be available and stored in the RDB metadata, not in an application program.
+11.The data manipulation language of the relational system should not care where or how the physical data is distributed 
+	and should not require alteration if the physical data is centralized or distributed.
+12.Any row processing done in the system must obey the same integrity rules and constraints that set-processing operations do.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+															
+														
+														
+														

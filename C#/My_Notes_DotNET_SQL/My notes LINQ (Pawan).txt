@@ -1,0 +1,67 @@
+LINQ(Lannguage Integrated Query) To SQL :
+
+Already their is an language known as SQL with ADO.Net
+
+SQL=>SQL server ( ADO.net )
+1.Runtime sysntax syntax checking of Sql statement
+	- The sysntax checking is done by database engine not by compiler
+		due to we pass cmd in "" hence compiler dont verify it.
+	- Hence ever time the query is fired it goes to database engine 
+	which increases the overlload
+ 
+2.not type safe 
+3.No Intellisense suppot is available
+4.debuging of sql stmts is not possible
+5. Code is a combination of Object oriented and relational
+
+
+Eg of Query:
+"insert into student Values("+textbox1.Text+",'"+textbox2.Text+"')";
+I.E : we have to again again with "" '' and textbox field are not
+		understanded by compiler
+     insert into student Values( 10 , 'Pawan')
+
+
+LINQ => SQL Server
+1. Compile time systax checking.
+2. Reduced the Database engine.
+3.Type safe as a develop u never need to know the column and table 
+	type.. here intellisenc provide all knowledge
+4.Debugging is supported.
+5.pure object oriented code.
+
+	table			=	class
+	column			=	property
+	rows 			=	Instance
+	stored Proc 	= 	Methods
+	
+	-to work with linq tosql firt we need to convert all th realational object of 
+	database into object oriented types and this process is known as 
+	ORM (Object relational maping)
+	
+	To perfomrm this  we are provided with a tool OR designer
+	
+	OR (Object Relation ) Designer 
+	this will help us to all into object datra type 
+	Step 1: Perform ORM by  adding Or Designer
+	Step 2: Adding a reference for an  assembly i.e system.data.linq 
+	step 3:	we need tp write the connection string into the configure the  congfig
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
