@@ -1,0 +1,29 @@
+Microsoft Visual Studio Solution File, Format Version 8.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RServer", "RServer.csproj", "{71289603-B5B2-4018-8865-E7795192BF87}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RemotableObjects", "..\RemotableObjects\RemotableObjects.csproj", "{8344AD05-4EEC-4710-8EE0-BE8187ED4091}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		Debug = Debug
+		Release = Release
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{71289603-B5B2-4018-8865-E7795192BF87}.Debug.ActiveCfg = Debug|.NET
+		{71289603-B5B2-4018-8865-E7795192BF87}.Debug.Build.0 = Debug|.NET
+		{71289603-B5B2-4018-8865-E7795192BF87}.Release.ActiveCfg = Release|.NET
+		{71289603-B5B2-4018-8865-E7795192BF87}.Release.Build.0 = Release|.NET
+		{8344AD05-4EEC-4710-8EE0-BE8187ED4091}.Debug.ActiveCfg = Debug|.NET
+		{8344AD05-4EEC-4710-8EE0-BE8187ED4091}.Debug.Build.0 = Debug|.NET
+		{8344AD05-4EEC-4710-8EE0-BE8187ED4091}.Release.ActiveCfg = Release|.NET
+		{8344AD05-4EEC-4710-8EE0-BE8187ED4091}.Release.Build.0 = Release|.NET
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

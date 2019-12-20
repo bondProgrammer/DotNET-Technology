@@ -1,0 +1,21 @@
+C:\Users\Abhijit Nagale\Downloads\Net_Remoting_src\Code\RClient\obj\Debug\RClient.csprojResolveAssemblyReference.cache
+C:\Users\Abhijit Nagale\Downloads\Net_Remoting_src\Code\RClient\obj\Debug\RemotableObjects.frmRCleint.resources
+C:\Users\Abhijit Nagale\Downloads\Net_Remoting_src\Code\RClient\obj\Debug\RClient.csproj.GenerateResource.Cache
+C:\Users\Abhijit Nagale\Downloads\Net_Remoting_src\Code\RClient\bin\Debug\RClient.exe
+C:\Users\Abhijit Nagale\Downloads\Net_Remoting_src\Code\RClient\bin\Debug\RClient.pdb
+C:\Users\Abhijit Nagale\Downloads\Net_Remoting_src\Code\RClient\bin\Debug\RemotableObjects.dll
+C:\Users\Abhijit Nagale\Downloads\Net_Remoting_src\Code\RClient\obj\Debug\RClient.exe
+C:\Users\Abhijit Nagale\Downloads\Net_Remoting_src\Code\RClient\obj\Debug\RClient.pdb
+E:\Net_Remoting_src\RClient\obj\Debug\RClient.exe
+E:\Net_Remoting_src\RClient\obj\Debug\RClient.pdb
+E:\Net_Remoting_src\RClient\bin\Debug\RClient.exe
+E:\Net_Remoting_src\RClient\bin\Debug\RClient.pdb
+E:\Net_Remoting_src\RClient\bin\Debug\RClient.exe.config
+E:\Net_Remoting_src\RClient\bin\Debug\RemotableObjects.dll
+E:\Net_Remoting_src\RClient\obj\Debug\RClient.csprojResolveAssemblyReference.cache
+E:\Utility\Net_Remoting_src\RClient\bin\Debug\RClient.exe.config
+E:\Utility\Net_Remoting_src\RClient\obj\Debug\RClient.exe
+E:\Utility\Net_Remoting_src\RClient\obj\Debug\RClient.pdb
+D:\pawan\practise\wcf\My Practise\UTILITY\Net_Remoting_src\RClient\bin\Debug\RClient.exe.config
+D:\pawan\practise\wcf\My Practise\UTILITY\Net_Remoting_src\RClient\obj\Debug\RClient.exe
+D:\pawan\practise\wcf\My Practise\UTILITY\Net_Remoting_src\RClient\obj\Debug\RClient.pdb

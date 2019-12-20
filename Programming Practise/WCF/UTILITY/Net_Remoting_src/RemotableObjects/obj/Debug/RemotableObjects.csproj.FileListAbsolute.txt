@@ -1,0 +1,9 @@
+C:\Users\Abhijit Nagale\Downloads\Net_Remoting_src\Code\RemotableObjects\bin\Debug\RemotableObjects.dll
+C:\Users\Abhijit Nagale\Downloads\Net_Remoting_src\Code\RemotableObjects\bin\Debug\RemotableObjects.pdb
+C:\Users\Abhijit Nagale\Downloads\Net_Remoting_src\Code\RemotableObjects\obj\Debug\RemotableObjects.dll
+C:\Users\Abhijit Nagale\Downloads\Net_Remoting_src\Code\RemotableObjects\obj\Debug\RemotableObjects.pdb
+E:\Net_Remoting_src\RemotableObjects\bin\Debug\RemotableObjects.dll
+E:\Net_Remoting_src\RemotableObjects\bin\Debug\RemotableObjects.pdb
+E:\Net_Remoting_src\RemotableObjects\obj\Debug\RemotableObjects.dll
+E:\Net_Remoting_src\RemotableObjects\obj\Debug\RemotableObjects.pdb
+E:\Net_Remoting_src\RemotableObjects\obj\Debug\RemotableObjects.csprojResolveAssemblyReference.cache

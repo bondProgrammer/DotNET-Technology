@@ -1,0 +1,81 @@
+   public static int OpenAndSaveExcelSheet(string source, ProductEntities productObjectContext, string tableName, bool isBirla)
+        {
+            try
+            {
+                using (var sqlBulkCopy = new SqlBulkCopy(productObjectContext.Database.Connection.ConnectionString, SqlBulkCopyOptions.FireTriggers))
+                {
+                    IWorkbook workbook;
+                    DataTable dt = new DataTable();
+                    string connectionString = productObjectContext.Database.Connection.ConnectionString;
+                    sqlBulkCopy.DestinationTableName = tableName;
+                    string excelFilePath = source;
+                    using (FileStream stream = new FileStream(excelFilePath, FileMode.Open, FileAccess.Read))
+                    {
+                        workbook = new HSSFWorkbook(stream);
+                    }
+                    ISheet sheet = workbook.GetSheetAt(0);
+                    IRow headerRow = sheet.GetRow(0);                    
+                    string columnname = "Select top " + (headerRow.LastCellNum + 1) + " COLUMN_NAME From INFORMATION_SCHEMA.COLUMNS Where table_name = '" + tableName + "'";
+                    var tempcolumnname = GetDataSet(columnname, tableName, connectionString);                    
+                    System.Collections.IEnumerator rows = sheet.GetRowEnumerator();                    
+                    int cellCount = headerRow.LastCellNum;
+                    foreach (DataRow colname in tempcolumnname.Tables[0].Rows)
+                        dt.Columns.Add(colname[0].ToString());
+                    for (int i = (sheet.FirstRowNum + 3); i <= sheet.LastRowNum; i++)
+                    {
+                        IRow row = sheet.GetRow(i);
+                        DataRow dataRow = dt.NewRow();
+                        if (row == null)
+                        {
+                            break;
+                        }
+                        for (int j = row.FirstCellNum; j < row.Cells.Count; j++)
+                        {
+                            string temp;
+                            if (j > 99)
+                                continue;
+                            dataRow.SetField(0, CheckSum.GetCheckSum(Guid.NewGuid().ToString()));
+                            if (row.GetCell(j) == null)
+                            {
+                                temp = "NA";
+                            }
+                            else
+                            {
+                                temp = row.GetCell(j).ToString();
+                            } 
+                            if (!isBirla && j == 15 && temp.StartsWith("-"))
+                                temp = "0";
+                            if (temp == "" || temp == null )
+                            {
+                                temp = "NA";
+                                continue;
+                            }
+                            temp = temp.Replace(",", "");
+                            temp = temp.Trim();
+                            dataRow[j + 1] = temp.ToString();
+                        }
+                        dt.Rows.Add(dataRow);
+                    }
+                    int flag = 0;
+                    productObjectContext.Database.ExecuteSqlCommand("Delete From " + tableName);
+                    using (var sqlBulk = new SqlBulkCopy(connectionString, SqlBulkCopyOptions.FireTriggers))
+                    {
+                        flag = 1;
+                        sqlBulk.DestinationTableName = tableName;
+                        sqlBulk.BulkCopyTimeout = 600;
+                        sqlBulk.WriteToServer(dt);
+                        flag = 1;
+                        if (flag == 1)
+                        {
+                            return dt.Rows.Count;
+                        }
+                    }
+                    return 0;
+                }
+            }
+            catch (Exception exception)
+            {
+                CLog.ExceptionError(exception);
+                throw exception;
+            }
+        }

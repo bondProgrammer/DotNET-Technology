@@ -1,0 +1,19 @@
+C:\Users\Abhijit Nagale\Downloads\Net_Remoting_src\Code\RServer\obj\Release\RServer.csprojResolveAssemblyReference.cache
+C:\Users\Abhijit Nagale\Downloads\Net_Remoting_src\Code\RServer\obj\Release\RemotableObjects.frmRServer.resources
+C:\Users\Abhijit Nagale\Downloads\Net_Remoting_src\Code\RServer\obj\Release\RServer.csproj.GenerateResource.Cache
+C:\Users\Abhijit Nagale\Downloads\Net_Remoting_src\Code\RServer\bin\Release\RServer.exe
+C:\Users\Abhijit Nagale\Downloads\Net_Remoting_src\Code\RServer\bin\Release\RemotableObjects.dll
+C:\Users\Abhijit Nagale\Downloads\Net_Remoting_src\Code\RServer\obj\Release\RServer.exe
+E:\Net_Remoting_src\RServer\bin\Release\RServer.exe.config
+E:\Net_Remoting_src\RServer\obj\Release\RServer.exe
+E:\Net_Remoting_src\RServer\bin\Release\RServer.exe
+E:\Net_Remoting_src\RServer\bin\Release\ICSharpCode.SharpZipLib.dll
+E:\Net_Remoting_src\RServer\bin\Release\RemotableObjects.dll
+E:\Net_Remoting_src\RServer\bin\Release\TDSRenderEngineDll.dll
+E:\Net_Remoting_src\RServer\obj\Release\RemotableObjects.frmRServer.resources
+E:\Net_Remoting_src\RServer\obj\Release\RServer.csproj.GenerateResource.Cache
+E:\Net_Remoting_src\RServer\obj\Release\RServer.csprojResolveAssemblyReference.cache
+E:\Utility\Net_Remoting_src\RServer\bin\Release\RServer.exe.config
+E:\Utility\Net_Remoting_src\RServer\obj\Release\RServer.exe
+D:\pawan\practise\wcf\My Practise\UTILITY\Net_Remoting_src\RServer\bin\Release\RServer.exe.config
+D:\pawan\practise\wcf\My Practise\UTILITY\Net_Remoting_src\RServer\obj\Release\RServer.exe

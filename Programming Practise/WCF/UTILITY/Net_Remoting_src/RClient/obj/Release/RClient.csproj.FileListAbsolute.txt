@@ -1,0 +1,7 @@
+E:\Net_Remoting_src\RClient\bin\Release\RClient.exe.config
+E:\Net_Remoting_src\RClient\bin\Release\RClient.exe
+E:\Net_Remoting_src\RClient\bin\Release\RemotableObjects.dll
+E:\Net_Remoting_src\RClient\obj\Release\RemotableObjects.frmRCleint.resources
+E:\Net_Remoting_src\RClient\obj\Release\RClient.csproj.GenerateResource.Cache
+E:\Net_Remoting_src\RClient\obj\Release\RClient.exe
+E:\Net_Remoting_src\RClient\obj\Release\RClient.csprojResolveAssemblyReference.cache
