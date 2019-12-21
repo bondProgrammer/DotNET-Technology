@@ -1,20 +1,27 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace staticblk
+namespace Day2
 {
-    static class Program
+    class Advance
+    {
+        static Advance()
+        {
+            Console.WriteLine("Advance Static Constructor");
+        }
+    }
+    class Program:Advance
     {
         static Program()
         {
-            Console.WriteLine("static sonstructor");
+            Console.WriteLine("static Program sonstructor");
         }
         static void Main(string[] args)
         {
+            Advance a = new Advance();
+            //Program p = new Program();
             Console.WriteLine("in main");
+            Console.ReadLine();
         }
     }
 }
